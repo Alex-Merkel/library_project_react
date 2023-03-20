@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
@@ -9,7 +9,7 @@ import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <Provider store={store}>
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path="/dashboard" element={<AuthChecker><Dashboard /></AuthChecker>} />
         </Routes>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
